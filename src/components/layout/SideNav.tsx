@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { teams } from "@/lib/data";
 import { ChevronRight, LayoutDashboard, LogOut, Settings } from "lucide-react";
+import { BarChart, Calendar, Share2, Rocket, Users } from "lucide-react";
 
 const SideNav: React.FC = () => {
   const location = useLocation();
@@ -88,9 +89,7 @@ const SideNav: React.FC = () => {
 };
 
 function getIconByName(name: string) {
-  // Import icons dynamically based on name
-  const { BarChart, Calendar, Share2, Rocket, Users } = require("lucide-react");
-  
+  // Use an object with directly imported icons instead of require()
   const iconMap: Record<string, any> = {
     "bar-chart": BarChart,
     "calendar": Calendar,
